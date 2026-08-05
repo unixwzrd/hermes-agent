@@ -31,6 +31,7 @@ import {
   setTitlebarAppActionsSide,
   type TitlebarAppActionsSide
 } from '@/store/titlebar-app-actions'
+import { $reducedEffects, setReducedEffects } from '@/store/reduced-effects'
 import { $hideCodeDiffs, $toolViewMode, setHideCodeDiffs, setToolViewMode } from '@/store/tool-view'
 import { $toursEnabled, setToursEnabled } from '@/store/tours'
 import {
@@ -426,6 +427,7 @@ export function AppearanceSettings({ subpage }: AppearanceSettingsProps = {}) {
   const toursEnabled = useStore($toursEnabled)
   const spentTips = useStore($spentTipCount)
   const vibeHeartsEnabled = useStore($vibeHeartsEnabled)
+  const reducedEffects = useStore($reducedEffects)
   const backdrop = useStore($backdrop)
   const introSplash = useStore($introSplash)
   const installs = useStore($marketplaceInstalls)
@@ -726,6 +728,24 @@ export function AppearanceSettings({ subpage }: AppearanceSettingsProps = {}) {
               title={a.appActionsTitle}
             />
           )}
+
+          <ListRow
+            action={
+              <SegmentedControl
+                onChange={id => {
+                  triggerHaptic('selection')
+                  setReducedEffects(id === 'reduced')
+                }}
+                options={[
+                  { id: 'full', label: a.effectsFull },
+                  { id: 'reduced', label: a.effectsReduced }
+                ]}
+                value={reducedEffects ? 'reduced' : 'full'}
+              />
+            }
+            description={a.effectsDesc}
+            title={a.effectsTitle}
+          />
 
           {/* Linux has neither half of this setting (see TRANSLUCENCY_SUPPORTED),
               so the row is absent there rather than offering a dead lever. */}

@@ -811,6 +811,11 @@ export const en: Translations = {
       appActionsDesc: 'Where Settings, Layout, and HUD sit in the titlebar. Right leaves room for tabs on the left.',
       appActionsLeft: 'Left',
       appActionsRight: 'Right',
+      effectsTitle: 'Motion and Effects',
+      effectsDesc:
+        'Reduced keeps status indicators visible but stops continuous shimmer, gradient, and activity animations to preserve GPU capacity.',
+      effectsFull: 'Full',
+      effectsReduced: 'Reduced',
       terminalFontTitle: 'Terminal Font',
       terminalFontDesc:
         'Choose an installed font for Desktop terminals. Nerd Fonts render Powerlevel10k and shell icons; leave blank to use bundled JetBrains Mono.',

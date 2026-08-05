@@ -565,6 +565,11 @@ export const ja = defineLocale({
         '設定・レイアウト・HUD をタイトルバーの左右どちらに置くか。右にするとタブ用のスペースが左に残ります。',
       appActionsLeft: '左',
       appActionsRight: '右',
+      effectsTitle: 'モーションとエフェクト',
+      effectsDesc:
+        '「軽減」では状態表示を残したまま、GPU負荷を抑えるため連続するシマー、グラデーション、動作アニメーションを停止します。',
+      effectsFull: 'フル',
+      effectsReduced: '軽減',
       terminalFontTitle: 'ターミナルフォント',
       terminalFontDesc:
         'Desktop のターミナルで使用するインストール済みフォントを選びます。Nerd Font は Powerlevel10k とシェルアイコンを表示できます。空欄では内蔵の JetBrains Mono を使用します。',

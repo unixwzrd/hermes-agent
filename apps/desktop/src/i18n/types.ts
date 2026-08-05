@@ -644,6 +644,10 @@ export interface Translations {
       appActionsDesc: string
       appActionsLeft: string
       appActionsRight: string
+      effectsTitle: string
+      effectsDesc: string
+      effectsFull: string
+      effectsReduced: string
       terminalFontTitle: string
       terminalFontDesc: string
       terminalFontPlaceholder: string

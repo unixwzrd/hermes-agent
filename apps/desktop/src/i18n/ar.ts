@@ -612,6 +612,11 @@ export const ar = defineLocale({
       hideThreadTimelineDesc: 'إخفاء أشرطة التنقل على الحافة اليمنى لكل محادثة.',
       reasoningCollapsedTitle: 'طي التفكير افتراضيًا',
       reasoningCollapsedDesc: 'أبقِ التفكير المتدفق متاحًا دون توسيعه حتى تفتحه.',
+      effectsTitle: 'الحركة والتأثيرات',
+      effectsDesc:
+        'يبقي الوضع المخفّض مؤشرات الحالة ظاهرة ويوقف تأثيرات اللمعان والتدرج والحركة المستمرة للحفاظ على موارد وحدة معالجة الرسومات.',
+      effectsFull: 'كاملة',
+      effectsReduced: 'مخفّضة',
       translucencyTitle: 'شفافية النافذة',
       translucencyDesc: 'إظهار سطح المكتب من خلال النافذة بالكامل، بما في ذلك النص.',
       translucencyGlassDesc: 'زجاج غير لامع: يظهر سطح المكتب كضبابية ناعمة بينما يبقى النص واضحًا.',

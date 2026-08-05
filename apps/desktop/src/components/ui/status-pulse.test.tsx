@@ -2,6 +2,7 @@ import { act, cleanup, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { installWindowStateBridge, type WindowStateBridge } from '../../test/window-state'
+import { setReducedEffects } from '@/store/reduced-effects'
 
 import { StatusPulse } from './status-pulse'
 
@@ -30,6 +31,7 @@ describe('StatusPulse', () => {
   const played: PlayedAnimation[] = []
 
   beforeEach(() => {
+    setReducedEffects(false)
     vi.useFakeTimers()
     vi.spyOn(window.document, 'hasFocus').mockReturnValue(true)
     installMatchMedia(false)
@@ -53,6 +55,7 @@ describe('StatusPulse', () => {
 
   afterEach(() => {
     cleanup()
+    setReducedEffects(false)
     played.length = 0
     Reflect.deleteProperty(HTMLElement.prototype, 'animate')
     delete (window as unknown as { hermesDesktop?: unknown }).hermesDesktop
@@ -109,5 +112,15 @@ describe('StatusPulse', () => {
 
     expect(played).toHaveLength(0)
     expect(vi.getTimerCount()).toBe(0)
+  })
+
+  it('stays static when Hermes reduced effects are enabled', () => {
+    setReducedEffects(true)
+
+    render(<StatusPulse kind="opacity" />)
+
+    expect(played).toHaveLength(0)
+    act(() => vi.advanceTimersByTime(5_000))
+    expect(played).toHaveLength(0)
   })
 })

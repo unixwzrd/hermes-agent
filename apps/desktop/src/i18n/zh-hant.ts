@@ -548,6 +548,10 @@ export const zhHant = defineLocale({
       appActionsDesc: '設定、版面與 HUD 放在標題列左側或右側。選右側可把左側留給分頁。',
       appActionsLeft: '左側',
       appActionsRight: '右側',
+      effectsTitle: '動態與特效',
+      effectsDesc: '精簡模式會保留狀態指示，同時停止持續的閃爍、漸層與活動動畫，以節省 GPU 資源。',
+      effectsFull: '完整',
+      effectsReduced: '精簡',
       terminalFontTitle: '終端機字型',
       terminalFontDesc:
         '選擇已安裝的字型用於桌面端終端機。Nerd Font 可正確顯示 Powerlevel10k 與 Shell 圖示；留空則使用內建的 JetBrains Mono。',
