@@ -1,8 +1,9 @@
 import { act, cleanup, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { installWindowStateBridge, type WindowStateBridge } from '../../test/window-state'
 import { setReducedEffects } from '@/store/reduced-effects'
+
+import { installWindowStateBridge, type WindowStateBridge } from '../../test/window-state'
 
 import { StatusPulse } from './status-pulse'
 
