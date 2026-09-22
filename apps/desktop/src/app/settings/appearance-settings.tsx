@@ -729,23 +729,26 @@ export function AppearanceSettings({ subpage }: AppearanceSettingsProps = {}) {
             />
           )}
 
-          <ListRow
-            action={
-              <SegmentedControl
-                onChange={id => {
-                  triggerHaptic('selection')
-                  setReducedEffects(id === 'reduced')
-                }}
-                options={[
-                  { id: 'full', label: a.effectsFull },
-                  { id: 'reduced', label: a.effectsReduced }
-                ]}
-                value={reducedEffects ? 'reduced' : 'full'}
-              />
-            }
-            description={a.effectsDesc}
-            title={a.effectsTitle}
-          />
+          {show('general') && (
+            <ListRow
+              action={
+                <SegmentedControl
+                  onChange={id => {
+                    triggerHaptic('selection')
+                    setReducedEffects(id === 'reduced')
+                  }}
+                  options={[
+                    { id: 'full', label: a.effectsFull },
+                    { id: 'reduced', label: a.effectsReduced }
+                  ]}
+                  value={reducedEffects ? 'reduced' : 'full'}
+                />
+              }
+              description={a.effectsDesc}
+              id={appearanceSettingElementId(APPEARANCE_SETTING_IDS.reducedEffects)}
+              title={a.effectsTitle}
+            />
+          )}
 
           {/* Linux has neither half of this setting (see TRANSLUCENCY_SUPPORTED),
               so the row is absent there rather than offering a dead lever. */}

@@ -18,6 +18,7 @@ const SETTING_SUBPAGES: Readonly<Record<string, AppearanceSubpageId>> = {
   'appearance.hide-thread-timeline': 'chat-display',
   'appearance.intro-splash': 'general',
   'appearance.language': 'general',
+  'appearance.reduced-effects': 'general',
   'appearance.pet': 'pet',
   'appearance.theme': 'theme',
   'appearance.tool-view': 'chat-display',
